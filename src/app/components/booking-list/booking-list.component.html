@@ -1,0 +1,32 @@
+
+<div class="row">
+    <div class="col-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>RoomName</th>
+                    <th>Booking Rate</th>
+                    <th>Booking From Date</th>
+                    <th>Booking To Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let booking of bookingList ;let sr=index">
+                    <td>{{sr+1}}</td>
+                    <td >{{booking.name}}</td>
+                    <td >{{booking.mobileNo}}</td>
+                    <td >{{booking.passengerName}}</td>
+                    <td>{{booking.bookingRate}}</td>
+                    <td>{{booking.bookingFromDate | date}}</td>
+                    <td>{{booking.bookingToDate | date}}</td>
+             
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

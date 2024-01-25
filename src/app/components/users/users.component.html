@@ -1,0 +1,62 @@
+
+<div class="row">
+    <div class="col-6">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>Password</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList ;let sr=index">
+                    <td>{{sr+1}}</td>
+                    <td >{{user.userName}}</td>
+                    <td >{{user.password}}</td>
+                    <td >{{user.role}}</td>
+                    <td class="d-grid gap-4 d-md-flex"> <button class="btn btn-sm- btn-primary " (click)="onEdit(user)">Edit</button>
+                     <button class="btn btn-sm- btn-danger "  (click)="onDelete(user.userId)">Remove</button></td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4 mx-auto mt-4">
+        
+            <div class="row">
+                <div class="col-6">
+                    <label for="" class="control-label">Name</label>
+                    <input type="text" class="form-control"  placeholder="Name" [(ngModel)]="userObj.userName">
+                </div>
+                <div class="col-6">
+                    <label for="" class="control-label">Password</label>
+                    <input type="text" class="form-control"  placeholder="Password" [(ngModel)]="userObj.password">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <label for="">Select Role</label>
+                    <select class="form-control" [(ngModel)]="userObj.role">
+                        <option value="staff">Staff</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary" (click)="saveUser()">Save</button>
+                </div>
+            </div>
+         
+
+    </div>
+</div>
+
+
+ 
+
